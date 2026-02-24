@@ -1,5 +1,5 @@
 # Data-structures-and-algorithms
 САОД 1
-#KMP 
+# KMP 
 добавлены тесты
-#Стек
+# Стек
