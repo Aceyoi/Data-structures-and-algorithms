@@ -1,7 +1,7 @@
 ﻿//Сапожников Юрий ИВТ-22
-
 #include "SortAndSearch.Modul.Time.h"
 #include "SortAndSearch.Test.h"
+#include "generate.h"
 
 using namespace std;
 const size_t X = 50;
@@ -32,7 +32,7 @@ int main(){
 	array3.resize(XX);
 
 	vector<int> array4; // Создание интового векторногго массива
-	array4.resize(XXXX);
+	array4.resize(1000);
 
 	Random_array(array0, MAX, MIN);
 	Random_array(array1, MAX, MIN);
@@ -40,19 +40,24 @@ int main(){
 	Random_array(array3, MAX, MIN);
 	Random_array(array4, MAX, MIN);
 
-	Bubblesort(array0);
-	Shellsort(array1);
-	Quicksort(array2);
-	Mergesort(array3);
+	Bubblesort(array4);
+	Shellsort(array4);
+	Quicksort(array4);
+	Mergesort(array4);
 
-	cout << "Вывод массива: " << endl;
-	Print_array_vector(array4);
-	cout << endl;
+	//cout << "Вывод массива: " << endl;
+	//Print_array_vector(array4);
+	//cout << endl;
 
 	shellsort(array4);
 	Binsearch(array4, 7);
 	Interpolationsearch(array4, 7);
 
+
+	//generate_sort_database(MAX, MIN);
+	//generate_search_database();
+
+	cout << "https://colab.research.google.com/drive/1Otqhu7h-z-MRiu8kXqE5wilzAJucOskv?usp=sharing";
 
 	return 0;
 }
