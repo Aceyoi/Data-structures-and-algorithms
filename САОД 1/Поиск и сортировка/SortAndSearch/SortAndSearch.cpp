@@ -55,7 +55,7 @@ int main(){
 
 
 	//generate_sort_database(MAX, MIN);
-	//generate_search_database();
+	generate_search_database();
 
 	cout << "https://colab.research.google.com/drive/1Otqhu7h-z-MRiu8kXqE5wilzAJucOskv?usp=sharing";
 

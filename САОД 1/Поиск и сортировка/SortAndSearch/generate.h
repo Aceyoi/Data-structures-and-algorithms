@@ -27,7 +27,12 @@ double measure_time(function<void(vector<int>&)> f, vector<int>& arr) {
 void generate_sort_database(size_t MAX, size_t MIN) {
     cout << "Генерация базы данных...\n";
 
-    vector<size_t> sizes = { 1000, 5000, 10000};
+    // 30 размеров для четкого показа Big O: линейный рост для Shell, n log n для Quick/Merge, n² для Bubble
+    vector<size_t> sizes = {
+        100, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800,
+        2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000,
+        9000, 10000, 12000, 14000, 16000, 18000, 20000, 25000, 30000, 35000
+    };
     const int NUM_TESTS = 20;
 
     ofstream csv("sort_database.csv");
@@ -42,28 +47,28 @@ void generate_sort_database(size_t MAX, size_t MIN) {
             vector<int> arr(n);
             random_array(arr, MAX, MIN);
 
-            // Bubble
+            // Bubble (покажет n² - параболу)
             vector<int> copy = arr;
             auto start = chrono::high_resolution_clock::now();
             bubblesort(copy);
             total_bubble += chrono::duration<double>(chrono::high_resolution_clock::now() - start).count();
 
-            // Shell  
+            // Shell (почти линейный)
             copy = arr;
             start = chrono::high_resolution_clock::now();
             shellsort(copy);
             total_shell += chrono::duration<double>(chrono::high_resolution_clock::now() - start).count();
 
-            // Quick
+            // Quick (n log n)
             copy = arr;
             start = chrono::high_resolution_clock::now();
-            quicksort(copy, 0, n - 1);  
+            quicksort(copy, 0, n - 1);
             total_quick += chrono::duration<double>(chrono::high_resolution_clock::now() - start).count();
 
-            // Merge
+            // Merge (n log n)
             copy = arr;
             start = chrono::high_resolution_clock::now();
-            mergesort(copy, 0, n);  
+            mergesort(copy, 0, n);
             total_merge += chrono::duration<double>(chrono::high_resolution_clock::now() - start).count();
         }
 
@@ -74,12 +79,18 @@ void generate_sort_database(size_t MAX, size_t MIN) {
             << total_merge / NUM_TESTS << "\n";
     }
     csv.close();
+    cout << "\nГотово! Файл sort_database.csv создан.\n";
 }
+
 
 void generate_search_database() {
     cout << "Генерация базы данных ПОИСКА...\n";
 
-    vector<size_t> sizes = { 1000000, 5000000, 10000000, 25000000, 50000000 };
+    vector<size_t> sizes = {
+        100, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800,
+        2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000,
+        9000, 10000, 12000, 14000, 16000, 18000, 20000, 25000, 30000, 35000
+    };
     const int NUM_TESTS = 50;  
     const int SEARCHES_PER_TEST = 100;  
 
