@@ -3,4 +3,8 @@
 ### [Курс](https://github.com/ivtipm/Data-structures-and-algorithms/tree/main)
 
 ### [Задание САОД1](https://github.com/ivtipm/Data-structures-and-algorithms/blob/main/current_plans/2025/2025_part_1.md)
+
+###### [Анализ сложности](https://github.com/ivtipm/Data-structures-and-algorithms/blob/main/tasks/task_s1_alg_analysis.md)
+###### [Динамический алгоритм](https://github.com/ivtipm/Data-structures-and-algorithms/blob/main/tasks/task_s1_dynamic_programming.md)
+
 ### [Задание САОД2](https://github.com/ivtipm/Data-structures-and-algorithms/blob/main/current_plans/2025/2025_part_2.md)
